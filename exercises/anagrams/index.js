@@ -39,70 +39,70 @@ module.exports = anagrams;
 
 // ================================= #1 sol =======================================
 
-// function anagrams(stringA, stringB) {
+function anagrams(stringA, stringB) {
 
-//     // RegExp ; remove space and !
-//     // \w
-//     // const word = "HI THERE!!!!"
-//     // word.replace(/[^\w]/g, "").toLowerCase(); //hithere
+    // RegExp ; remove space and !
+    // \w
+    // const word = "HI THERE!!!!"
+    // word.replace(/[^\w]/g, "").toLowerCase(); //hithere
 
-//     // hello
-//     // {
-//     //     h:1,
-//     //     e:1,
-//     //     l:2,
-//     //     o:1
-//     // }
+    // hello
+    // {
+    //     h:1,
+    //     e:1,
+    //     l:2,
+    //     o:1
+    // }
 
-//     // llehos
-//     // {
-//     //     h:1,
-//     //     e:1,
-//     //     l:2,
-//     //     0:1,
-//     //     s:1
-//     // }
+    // llehos
+    // {
+    //     h:1,
+    //     e:1,
+    //     l:2,
+    //     0:1,
+    //     s:1
+    // }
 
-//     // Is to generate a character map OUT of both the String 
-//     // iterate over one of those character maps And compare all the letters inside of it and the Quantites
-//     // count the length
+    // Is to generate a character map OUT of both the String 
+    // iterate over one of those character maps And compare all the letters inside of it and the Quantites
+    // count the length
 
-//     // ========== #sol using character maps ===========
-//     // bulid a character map out of stringA and stringB
-//     // compare all the characters inside those 2 maps 
-//     // create helper function to buile a character map ; avoid write 2 separate for loops
+    // ========== #sol using character maps ===========
+    // bulid a character map out of stringA and stringB
+    // compare all the characters inside those 2 maps 
+    // create helper function to buile a character map ; avoid write 2 separate for loops
 
-//     const aCharMap = bulidCharMap(stringA);
-//     const bCharMap = bulidCharMap(stringB);
+    const aCharMap = bulidCharMap(stringA);
+    const bCharMap = bulidCharMap(stringB);
 
-//     if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
-//         return false;
-//     }
+    if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+        return false;
+    }
 
-//     /* iterate through 
-//     => object for in loops
-//     => array for of loops
-//     */
-//     for (let char in aCharMap) {
-//         if (aCharMap[char] !== bCharMap[char]) {
-//             return false;
-//         }
-//     }
+    /* iterate through 
+    => object for in loops
+    => array for of loops
+    */
+    for (let char in aCharMap) {
+        if (aCharMap[char] !== bCharMap[char]) {
+            return false;
+        }
+    }
 
-//     return true;
+    return true;
 
-// }
+}
 
-// function bulidCharMap(str) {
-//     const charMap = {};
-//     // .replace(/[^\w]/g, '') meaning ==> Any time that we find a character that is not a number a character Capercase or lowerCase character we want to replace it with Notthing or essentially an empty string ''
-//     for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
-//         charMap[char] = charMap[char] + 1 || 1;
-//     }
-//     return charMap;
-// }
+function bulidCharMap(str) {
+    const charMap = {};
+    // .replace(/[^\w]/g, '') meaning ==> Any time that we find a character that is not a number a character Capercase or lowerCase character we want to replace it with Notthing or essentially an empty string ''
+    for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+        charMap[char] = charMap[char] + 1 || 1;
+    }
+    return charMap;
+}
 
-// module.exports = anagrams;
+module.exports = anagrams;
 
 
 

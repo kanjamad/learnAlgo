@@ -41,7 +41,7 @@ module.exports = capitalize;
 
 // ========= #1 sol ===============================
 
-/*
+
 
 function capitalize(str) {
     // == pseudocode ===
@@ -78,4 +78,3 @@ module.exports = capitalize;
 // sentence.split(' '); // ['Hi','there']
 
 
-*/

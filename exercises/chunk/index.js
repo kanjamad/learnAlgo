@@ -21,8 +21,8 @@ function chunk(array, size) {
     // Create empty 'chunked' array
     // Create 'index' start at 0
     // While index is less than array.length
-        // Push a slice of length 'size' from 'array' into 'chunked'
-        // Add 'size' to 'index'
+    // Push a slice of length 'size' from 'array' into 'chunked'
+    // Add 'size' to 'index'
 
     const chunked = [];
     let index = 0;
@@ -39,26 +39,29 @@ function chunk(array, size) {
 }
 
 module.exports = chunk;
+
+
+
 // ======= sol #1 =============
-// function chunk(array, size) {
-//     // create empty array to hold chunks called 'chunked'
-//     // For each element in the *unchunked* array
-//     // Retrieve the last element in 'chunked'
-//          // if last element does not exist, or if it's length is equal to chunk size
-//              // Push a new chunk into 'chunked' with the current element
-//          // else add the current element into the chunk
+function chunk(array, size) {
+    // create empty array to hold chunks called 'chunked'
+    // For each element in the *unchunked* array
+    // Retrieve the last element in 'chunked'
+    // if last element does not exist, or if it's length is equal to chunk size
+    // Push a new chunk into 'chunked' with the current element
+    // else add the current element into the chunk
 
-//     const chunked = [];
+    const chunked = [];
 
-//     for (let element of array) {
-//         const last = chunked[chunked.length - 1];
+    for (let element of array) {
+        const last = chunked[chunked.length - 1];
 
-//         if (!last || last.length === size) {
-//             chunked.push([element]);
-//         } else {
-//             last.push(element);
-//         }
-//     }
-//     return chunked;
+        if (!last || last.length === size) {
+            chunked.push([element]);
+        } else {
+            last.push(element);
+        }
+    }
+    return chunked;
 
-// }
+}
