@@ -14,20 +14,20 @@ function reverse(str) {
 
     // sol#1
 
-    // const arr = str.split('');
-    // arr.reverse();
-    // return arr.join('');
+    const arr = str.split('');
+    arr.reverse();
+    return arr.join('');
 
 
     // sol#2 ----- clean up
 
-    // return str.split('').reverse().join('');
+    return str.split('').reverse().join('');
 
     // sol#3
 
-    let reversed ='';
-    for (let i=0; i<str.length;i++){
-        reversed= str[i]+ reversed;
+    let reversed = '';
+    for (let i = 0; i < str.length; i++) {
+        reversed = str[i] + reversed;
     }
     return reversed;
 }
