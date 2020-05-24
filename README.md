@@ -1,4 +1,4 @@
-### Runtime Complexity
+## Runtime Complexity
 
 ### How much more processing power/time is required to run your algorithm if we double the inputs?
 
@@ -11,6 +11,22 @@
 
 
 
+## Big 'O' Notation
+is another way of referencing runtime complexity
+- O(n) --> Linear
+- O(1) --> Constant
+- O(n^2) --> Quadratic
+
+
+
+## Identifying Runtime Complexity
+- Iterating with a simple for loop through a single collection? ---> O(n)
+- Iterating through half a collection? ---> O(n)
+- Iterating through two **different** collections with separate for loops? ---> O(n+m)
+- Two nested for loops iterating over the same collection? ---> O(n^2)
+- Two nested for loops iterating over diffeerent collections? ---> O(n * m)
+- Sorting ---> O(n * log(n))
+- Searching a sorted array? ---> O(log(n))
 
 ___
 Ex:<br>
@@ -36,7 +52,8 @@ function reverse(str) {
 }
 ```
 
-Each additional character = 1 step through 1 loop    --->   This would be 'N' or 'Linear' runtime
+- Each additional character = 1 step through 1 loop    --->   This would be 'N' or 'Linear' runtime
+- Iterating with a simple for loop through a single collection? ---> O(n)
 ___
 2. Steps Algorithm
 
@@ -75,7 +92,8 @@ function steps(n) {
     }
 }
 ```
-As 'n' increased by one, we had to do way more stuff, or (n*n) things total --->  This would be N^2, or 'Quadratic' runtime
+- As 'n' increased by one, we had to do way more stuff, or (n*n) things total --->  This would be N^2, or 'Quadratic' runtime
+- Two nested for loops iterating over the same collection? ---> O(n^2)
 ___
 
 
