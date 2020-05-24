@@ -28,6 +28,10 @@ is another way of referencing runtime complexity
 - Sorting ---> O(n * log(n))
 - Searching a sorted array? ---> O(log(n))
 
+
+## Space Complexity
+How much more memory or RAM is required by doubling the problem set?
+
 ___
 Ex:<br>
 1. String Reverse<br>
