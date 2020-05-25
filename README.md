@@ -100,7 +100,93 @@ function steps(n) {
 - Two nested for loops iterating over the same collection? ---> O(n^2)
 ___
 
+## Memoization
+Store the arguments of each function call along with the result. If the function is called again with the same arguments, return the precomputed result, rather than running the function again
 
+
+```
+// --- Directions
+// Print out the n-th entry in the fibonacci series.
+// The fibonacci series is an ordering of numbers where
+// each number is the sum of the preceeding two.
+// For example, the sequence
+//  [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+// forms the first ten entries of the fibonacci series.
+// Example:
+//   fib(4) === 3
+
+
+
+
+
+
+// ======= #2 sol Recursive solution ============
+/*
+
+example
+fib(0) // 0
+fib(1) //1
+
+
+                                            fib(5)
+
+                        fib(4)                                  fib(3)
+
+            fib(3)              fib(2)                  fib(2)          fib(1)
+
+        fib(2)  fib(1)      fib(1)    fib(0)        fib(1)      fib(0)
+
+    fib(1)  fib(0)
+
+
+
+* Time complexity
+// So when  we called Fibonacci with 5 :fib(5)
+// function itself is being invoked many times
+// Exponential Time 2^n --> If you add a single element to a collection, the processing power required doubles
+*/
+
+
+function fib(n) {
+    if (n < 2) {
+        return n;
+    }
+
+    return fib(n - 1) + fib(n - 2);
+}
+
+module.exports = fib;
+
+**** But If you looking for improve the runtime of this algorithm
+// So clearly our fibonacci function is being called mutiple times with identical arguments
+// If there is some way that we can avoid all these extra function calls then if we call the fibonacci with 6. all we need to do computation stuff for fib 5,4,3,2,1,0 one time
+
+####---> Memoization <-----####
+
+
+// ======= #1 sol iterative solution ============
+
+//Time Complexity: O(n) -- > Linear
+
+function fib(n) {
+    const result = [0, 1];
+
+    // we will start at index 2 because we want to produce this element first
+    for (let i = 2; i <= n; i++) {
+        // const a = result[result.length -1]
+        // index 1 = 1 
+        const a = result[i - 1];
+        // index 0 = 0  
+        const b = result[i - 2];
+
+        result.push(a + b);
+    }
+    // return result[result.length - 1];
+    return result[n];
+
+}
+
+```
 
 
 
