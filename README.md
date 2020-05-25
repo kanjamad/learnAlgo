@@ -116,10 +116,6 @@ Store the arguments of each function call along with the result. If the function
 //   fib(4) === 3
 
 
-
-
-
-
 // ======= #2 sol Recursive solution ============
 /*
 
@@ -155,7 +151,6 @@ function fib(n) {
     return fib(n - 1) + fib(n - 2);
 }
 
-module.exports = fib;
 
 **** But If you looking for improve the runtime of this algorithm
 // So clearly our fibonacci function is being called mutiple times with identical arguments
@@ -171,17 +166,12 @@ module.exports = fib;
 function fib(n) {
     const result = [0, 1];
 
-    // we will start at index 2 because we want to produce this element first
     for (let i = 2; i <= n; i++) {
-        // const a = result[result.length -1]
-        // index 1 = 1 
         const a = result[i - 1];
-        // index 0 = 0  
         const b = result[i - 2];
 
         result.push(a + b);
     }
-    // return result[result.length - 1];
     return result[n];
 
 }
