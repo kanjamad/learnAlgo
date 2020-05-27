@@ -9,6 +9,39 @@
 //   fib(4) === 3
 
 
+// ======= #3 sol Memoization solution ============
+/*
+improve the runtime of recursive solution
+
+Slow Fib function ====> Memoizer =====> Fast Memoized Fib Function
+
+*/
+
+function memoize(fn) {
+    const cache = {};
+    return function (...args) {
+        if (cache[args]) {
+            return cache[args];
+        }
+        const result = fn.apply(this, args);
+        cache[args] = result;
+        return result;
+    };
+}
+
+
+function slowFib(n) {
+    if (n < 2) {
+        return n;
+    }
+
+    return fib(n - 1) + fib(n - 2);
+}
+
+const fib = memoize(slowFib);
+
+module.exports = fib;
+
 
 
 
@@ -112,5 +145,8 @@ function fib(n) {
 // If there is some way that we can avoid all these extra function calls then if we call the fibonacci with 6. all we need to do computation stuff for fib 5,4,3,2,1,0 one time
 
 ####---> Memoization <-----####
+
+Slow Fib function ====> Memoizer =====> Fast Memoized Fib Function
+
 
 */

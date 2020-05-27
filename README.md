@@ -116,6 +116,37 @@ Store the arguments of each function call along with the result. If the function
 //   fib(4) === 3
 
 
+// ======= #3 sol Memoization solution ============
+/*
+improve the runtime of recursive solution
+
+Slow Fib function ====> Memoizer =====> Fast Memoized Fib Function
+
+*/
+
+function memoize(fn) {
+    const cache = {};
+    return function (...args) {
+        if (cache[args]) {
+            return cache[args];
+        }
+        const result = fn.apply(this, args);
+        cache[args] = result;
+        return result;
+    };
+}
+
+
+function slowFib(n) {
+    if (n < 2) {
+        return n;
+    }
+
+    return fib(n - 1) + fib(n - 2);
+}
+
+const fib = memoize(slowFib);
+
 // ======= #2 sol Recursive solution ============
 /*
 
