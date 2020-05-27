@@ -1,3 +1,8 @@
+## Data Structures
+* Ways of organizing information with optimal ' runtime complexity ' for adding or removing records
+* JavaScript natively implements several data structures. 
+
+
 ## Runtime Complexity
 
 ### How much more processing power/time is required to run your algorithm if we double the inputs?
@@ -208,6 +213,11 @@ function fib(n) {
 }
 
 ```
+
+
+
+
+
 
 
 
