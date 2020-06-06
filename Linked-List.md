@@ -38,6 +38,7 @@ const nodeTwo = {
 };
 
 //To link them together, I have to explicitly from a reference between the two of them 
+// so I can do that by writing something like 
 
 nodeOne.next = nodeTwo;
 
@@ -49,3 +50,4 @@ nodeOne.next = nodeTwo;
  data  Next       data  Next
 
 ```
+### So by convention we usually make sure that every node has exactly two properties the data property and the next property 
